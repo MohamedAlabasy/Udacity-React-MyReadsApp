@@ -1,0 +1,30 @@
+# create app
+npx create-react-app my_reads_app
+
+
+# run app
+npm start
+
+
+# add router
+npm i react-router-dom
+
+
+# add bootstrap
+npm i react-bootstrap bootstrap
+
+
+# add react icons
+npm i react-icons --save
+
+
+# add alert
+npm i --save sweetalert2 sweetalert2-react-content
+
+
+# add lottie-player
+npm i react-lottie-player
+
+
+# add axios
+npm i axios
