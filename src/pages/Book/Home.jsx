@@ -54,6 +54,9 @@ export default function Home() {
                         </Link>
                     </button >
                 </div>
+                {booksData.length === 0 && <div className="mt-5 d-flex justify-content-center text-center">
+                    <div className='loader text-center' />
+                </div>}
 
                 <div className="row d-flex mt-3 justify-content-center text-center">
                     {isAllBook ? booksData.map((bookData) => {
@@ -65,6 +68,7 @@ export default function Home() {
                         return '';
                     })}
                 </div>
+
             </div >
         </>
     )
