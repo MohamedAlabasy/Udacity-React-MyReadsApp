@@ -12,8 +12,6 @@ export default function Search() {
     const [booksData, setBooksData] = useState([]);
     const [searchInput, setSearchInput] = useState('');
 
-
-
     const handelSearch = (e) => {
         setSearchInput(e.target.value)
     }
@@ -23,6 +21,16 @@ export default function Search() {
         setBooksData(result)
     }
 
+    const onUpdate = (bookID, bookShelf) => {
+        setBooksData(
+            booksData.map((bookData) => {
+                if (bookData.id === bookID) {
+                    bookData.shelf = bookShelf
+                }
+                return bookData
+            })
+        )
+    }
 
     return (
         <>
@@ -45,7 +53,7 @@ export default function Search() {
 
                 <div className="row d-flex mt-3 justify-content-center text-center">
                     {booksData.map((bookData) => {
-                        return <Book key={bookData.id} bookData={bookData} />
+                        return <Book key={bookData.id} bookData={bookData} onUpdate={onUpdate} />
                     })
                     }
                 </div>

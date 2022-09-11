@@ -3,16 +3,20 @@ import { Link } from 'react-router-dom'
 import { BiShowAlt } from "react-icons/bi";
 
 import { update } from '../utils/BooksAPI'
-import { showBook, successAlert } from './alerts'
+import { showBook, successAlert, failedAlert } from './alerts'
 
 export default function Book({ bookData, onUpdate }) {
 
     const updateBook = async (e) => {
         await update(bookData, e.target.value)
-        if (onUpdate) {
-            onUpdate(bookData.id, e.target.value)
-            successAlert()
-        }
+            .then((data) => {
+                successAlert()
+            }).catch(() => {
+                failedAlert()
+            })
+
+        onUpdate(bookData.id, e.target.value)
+
     }
     return (
         <div style={{ width: '18rem', margin: '0.4rem' }}

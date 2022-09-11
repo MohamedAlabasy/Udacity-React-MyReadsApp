@@ -7,8 +7,8 @@ import Book from '../../components/Book'
 
 export default function Home() {
     const [booksData, setBooksData] = useState([]);
-    const [shelfBook, setShelfBook] = useState([]);
     const [isAllBook, setIsAllBook] = useState('true');
+    const [newShelf, setNewShelf] = useState('');
 
     const [searchColor, setSearchColor] = useState('black');
 
@@ -23,11 +23,7 @@ export default function Home() {
 
     const showShelfBook = (shelf) => {
         setIsAllBook(false)
-        setShelfBook(
-            booksData.filter((bookData) => {
-                return bookData.shelf === shelf
-            })
-        )
+        setNewShelf(shelf)
     }
 
     const onUpdate = (bookID, bookShelf) => {
@@ -39,7 +35,6 @@ export default function Home() {
                 return bookData
             })
         )
-
     }
 
     return (
@@ -61,13 +56,14 @@ export default function Home() {
                 </div>
 
                 <div className="row d-flex mt-3 justify-content-center text-center">
-                    {(isAllBook) ? booksData.map((bookData) => {
+                    {isAllBook ? booksData.map((bookData) => {
                         return <Book key={bookData.id} bookData={bookData} onUpdate={onUpdate} />
-                    }) :
-                        shelfBook.map((bookData) => {
+                    }) : booksData.map((bookData) => {
+                        if (bookData.shelf === newShelf) {
                             return <Book key={bookData.id} bookData={bookData} onUpdate={onUpdate} />
-                        })
-                    }
+                        }
+                        return '';
+                    })}
                 </div>
             </div >
         </>

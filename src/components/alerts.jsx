@@ -7,6 +7,13 @@ export const successAlert = (msg = 'Your data has been success') => {
         'success'
     )
 }
+export const failedAlert = (msg = 'Something went wrong!') => {
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: msg,
+    })
+}
 
 export const showBook = (bookData) => {
     console.log(bookData);
