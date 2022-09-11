@@ -2,16 +2,16 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { BiShowAlt } from "react-icons/bi";
 
-// import { update } from '../utils/BooksAPI'
+import { update } from '../utils/BooksAPI'
 import { showBook } from './alerts'
 
 export default function Book({ bookData, onUpdate }) {
 
     const updateBook = async (e) => {
-        // console.log(e.target.value);
-        // const booksAPIData = await update(bookData, e.target.value)
-        // console.log(booksAPIData);
-        onUpdate(bookData.id, e.target.value)
+        await update(bookData, e.target.value)
+        if (onUpdate) {
+            onUpdate(bookData.id, e.target.value)
+        }
     }
     return (
         <div style={{ width: '18rem', margin: '0.4rem' }}

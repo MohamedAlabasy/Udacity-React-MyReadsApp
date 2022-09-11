@@ -15,35 +15,14 @@ export const failedAlert = (msg = 'Something went wrong!') => {
     })
 }
 
-export const saveAlert = () => {
-    Swal.fire({
-        title: 'Do you want to save the changes?',
-        showDenyButton: true,
-        showCancelButton: true,
-        confirmButtonText: 'Save',
-        denyButtonText: `Don't save`,
-    }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
-        if (result.isConfirmed) {
-            Swal.fire('Saved!', '', 'success')
-        } else if (result.isDenied) {
-            Swal.fire('Changes are not saved', '', 'info')
-        }
-    })
-
-}
-
-
 export const showBook = (bookData) => {
     console.log(bookData);
     Swal.fire({
         title: bookData.title,
         width: '80%',
         html:
-            // (bookData.shelf === 'read') ? 'border border-success' : (bookData.shelf === 'wantToRead') ? 'border border-danger' : 'border border-primary']}>
             `
             <div class="container row justify-content-center text-center">
-           
             <div class="col-lg-6 col-6 card">
                 <div class="card-header border-0 text-center font-weight-bold ${bookData.shelf === 'read' ? 'bg-success text-white' : bookData.shelf === 'wantToRead' ? 'bg-danger text-white' : 'bg-primary text-white'}">${bookData.shelf}</div>
                 <div class="card-body ">
