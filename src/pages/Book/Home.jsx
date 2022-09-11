@@ -39,6 +39,7 @@ export default function Home() {
                 return bookData
             })
         )
+
     }
 
     return (
@@ -47,13 +48,13 @@ export default function Home() {
                 <div className="btn-group" role="group" aria-label="Basic example">
                     <button type="button" onClick={() => { setIsAllBook(true) }} className="btn btn-outline-secondary">All</button>
                     <button type="button" onClick={() => { showShelfBook('wantToRead') }} className="btn btn-outline-danger">Want to Read</button>
-                    <button type="button" onClick={() => { showShelfBook('currentlyReading') }} className="btn btn-outline-success">Currently Reading</button>
-                    <button type="button" onClick={() => { showShelfBook('read') }} className="btn btn-outline-primary">Read</button>
+                    <button type="button" onClick={() => { showShelfBook('currentlyReading') }} className="btn btn-outline-primary">Currently Reading</button>
+                    <button type="button" onClick={() => { showShelfBook('read') }} className="btn btn-outline-success">Read</button>
                     <button type="button"
                         onMouseEnter={() => setSearchColor('white')}
                         className="btn btn-outline-dark books"
                         onMouseLeave={() => setSearchColor('black')}>
-                        <Link to="/search" title="search" onClick={() => { }}>
+                        <Link to="/search" title="search">
                             <BiSearchAlt style={{ width: '30px', height: '30px', color: searchColor }} />
                         </Link>
                     </button >
