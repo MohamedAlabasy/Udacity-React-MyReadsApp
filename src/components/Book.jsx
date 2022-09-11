@@ -2,9 +2,17 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { BiShowAlt } from "react-icons/bi";
 
+// import { update } from '../utils/BooksAPI'
 import { showBook } from './alerts'
 
-export default function Book({ bookData }) {
+export default function Book({ bookData, onUpdate }) {
+
+    const updateBook = async (e) => {
+        // console.log(e.target.value);
+        // const booksAPIData = await update(bookData, e.target.value)
+        // console.log(booksAPIData);
+        onUpdate(bookData.id, e.target.value)
+    }
     return (
         <div style={{ width: '18rem', margin: '0.4rem' }}
             className={['card p-0 mb-3 border-1', (bookData.shelf === 'read') ? 'border border-success' : (bookData.shelf === 'wantToRead') ? 'border border-danger' : 'border border-primary']}>
@@ -31,16 +39,14 @@ export default function Book({ bookData }) {
             </div>
             <div className="card-footer">
                 <div className="book-shelf-changer" style={{ backgroundColor: (bookData.shelf === 'read') ? '#28a745' : (bookData.shelf === 'wantToRead') ? '#dc3545' : '#007bff' }}>
-                    <select>
+                    <select id='beso' onChange={(e) => { updateBook(e) }}>
                         <option value="none" disabled>
                             Move to...
                         </option>
-                        <option value="currentlyReading">
-                            Currently Reading
-                        </option>
+                        <option value="none">None</option>
+                        <option value="currentlyReading"> Currently Reading</option>
                         <option value="wantToRead">Want to Read</option>
                         <option value="read">Read</option>
-                        <option value="none">None</option>
                     </select>
                 </div>
                 <div className='col-5'>
