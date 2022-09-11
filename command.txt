@@ -20,11 +20,3 @@ npm i react-icons --save
 
 # add alert
 npm i --save sweetalert2 sweetalert2-react-content
-
-
-# add lottie-player
-npm i react-lottie-player
-
-
-# add axios
-npm i axios
