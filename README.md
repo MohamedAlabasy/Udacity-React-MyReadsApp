@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+<h1 align="center">My Reads App</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description:
 
-## Available Scripts
+create a bookshelf app that allows you to select and categorize books you have read, are currently reading, or want to read. The project emphasizes using React to build the application and provides an API server and client library that you will use to persist information as you interact with the application.
 
-In the project directory, you can run:
+<p align="center">
+   <img src="https://user-images.githubusercontent.com/93389016/189553943-07748ad8-e393-4ae9-87f2-58522ca8facd.png" alt="Build Status">
+</p>
 
-### `npm start`
+## To run this project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+`Step 1` : To use this project must install [Node.js](https://nodejs.org/en/) Then Download the source code
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+git clone https://github.com/MohamedAlabasy/Udacity-React-MyReadsApp.git
+```
 
-### `npm test`
+`Step 2` : Enter the project file then install package
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+npm i
+```
 
-### `npm run build`
+`Step 3` : To run project
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+node run start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`Step 4` : Open the browser and click : [http://localhost:3000](http://localhost:3000)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<hr>
+<p align="center">
+   <img src="https://user-images.githubusercontent.com/93389016/189553777-5f370026-2cde-4a2e-ba14-944c0773f4fa.png" alt="Build Status">
+</p>
+<p align="center">
+   <img src="https://user-images.githubusercontent.com/93389016/189553815-15c3687c-c158-47f6-883b-d6f4ecff243d.png" alt="Build Status">
+</p>
+<p align="center">
+   <img src="https://user-images.githubusercontent.com/93389016/189553862-4a621b3c-aa41-4fed-a451-38cc4c443966.png" alt="Build Status">
+</p>
+<p align="center">
+   <img src="https://user-images.githubusercontent.com/93389016/189553992-32adc859-d0e4-435d-8ced-773a9074d961.png" alt="Build Status">
+</p>
 
-### `npm run eject`
+<hr>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Here are the [Command](https://github.com/MohamedAlabasy/Udacity-React-MyReadsApp/blob/main/command.txt) that were used in the project, You will find it in the project file.
