@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-// import logo from './logo.svg';
 
 import Home from './pages/Book/Home'
 import Search from './pages/Search'
