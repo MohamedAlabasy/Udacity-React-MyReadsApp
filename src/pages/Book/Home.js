@@ -27,14 +27,20 @@ export default function Home() {
     }
 
     const onUpdate = (bookID, bookShelf) => {
-        setBooksData(
-            booksData.map((bookData) => {
+        let newBookData;
+        if (bookShelf === 'none') {
+            newBookData = booksData.filter((bookData) => {
+                return bookData.id !== bookID
+            })
+        } else {
+            newBookData = booksData.map((bookData) => {
                 if (bookData.id === bookID) {
                     bookData.shelf = bookShelf
                 }
                 return bookData
             })
-        )
+        }
+        setBooksData(newBookData)
     }
 
     return (

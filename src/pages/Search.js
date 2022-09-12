@@ -17,11 +17,16 @@ export default function Search() {
         setSearchInput(e.target.value)
     }
 
-    const searchResult = async (e) => {
+    const searchResult = async () => {
         setShowLoader(true)
-        const result = await search(searchInput, 9)
-        setBooksData(result)
-        setShowLoader(false)
+        await search(searchInput, 9)
+            .then((data) => {
+                setBooksData(data)
+                setShowLoader(false)
+            })
+            .catch((error) => {
+                console.log(error);
+            })
     }
 
     const onUpdate = (bookID, bookShelf) => {
@@ -43,7 +48,7 @@ export default function Search() {
                         <div className="form-outline" style={{ width: '760px' }} >
                             <input onChange={(e) => handelSearch(e)} type="search" className="form-control" placeholder='Search by title, author, or ISBN' />
                         </div>
-                        <button className="btn btn-dark" onClick={(e) => { searchResult(e) }}>
+                        <button className="btn btn-dark" onClick={() => { searchResult() }}>
                             <BiSearchAlt style={{ width: '20px', height: '20px', color: 'white' }} />
                         </button>
                     </div>
@@ -61,7 +66,7 @@ export default function Search() {
 
 
                 <div className="row d-flex mt-3 justify-content-center text-center">
-                    {booksData ? booksData.map((bookData) => {
+                    {booksData.length > 0 ? booksData.map((bookData) => {
                         return <Book key={bookData.id} bookData={bookData} onUpdate={onUpdate} />
                     }) : <div className='container text-center align-items-center pb-2'>
                         {!showLoader && <div >
