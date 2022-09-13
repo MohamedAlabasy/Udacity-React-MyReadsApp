@@ -8,8 +8,6 @@ import defaultImage from '../assets/images/default.png'
 
 export default function Book({ bookData, onUpdate }) {
 
-    const [booksShelfState, setBooksShelfState] = useState(bookData.shelf);
-
     const updateBook = async (e) => {
         await update(bookData, e.target.value)
             .then((data) => {
@@ -47,7 +45,7 @@ export default function Book({ bookData, onUpdate }) {
             </div>
             <div className="card-footer">
                 <div className="book-shelf-changer" style={{ backgroundColor: (bookData.shelf === 'read') ? '#28a745' : (bookData.shelf === 'wantToRead') ? '#dc3545' : (bookData.shelf === 'currentlyReading') ? '#007bff' : '#212529' }}>
-                    <select id='beso' value={booksShelfState.shelf} onChange={(e) => { updateBook(e) }}>
+                    <select id='beso' onChange={(e) => { updateBook(e) }}>
                         <option value="disabled" disabled>
                             Move to...
                         </option>
