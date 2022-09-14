@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
-import empty from '../assets/images/empty.png'
 import { FaHome } from "react-icons/fa";
+
+import empty from '../assets/images/empty.png'
+
 export default function NotFound() {
     return (
         <div className='container text-center align-items-center pb-2'>
