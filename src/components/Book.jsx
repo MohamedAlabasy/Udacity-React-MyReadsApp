@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { BiShowAlt } from "react-icons/bi";
 
@@ -11,7 +11,6 @@ export default function Book({ bookData, onUpdate }) {
     const updateBook = async (e) => {
         await update(bookData, e.target.value)
             .then((data) => {
-                setBooksShelfState(e.target.value)
                 successAlert()
             }).catch((error) => {
                 failedAlert()
