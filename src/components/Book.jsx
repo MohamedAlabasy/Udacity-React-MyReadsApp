@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { BiShowAlt } from "react-icons/bi";
 
@@ -8,9 +8,14 @@ import defaultImage from '../assets/images/default.png'
 
 export default function Book({ bookData, onUpdate }) {
 
+    const [booksShelfState, setBooksShelfState] = useState(bookData.shelf);
+    console.log(booksShelfState);
+
     const updateBook = async (e) => {
         await update(bookData, e.target.value)
             .then((data) => {
+                console.log(e.target.value);
+                setBooksShelfState(e.target.value)
                 successAlert()
             }).catch((error) => {
                 failedAlert()
@@ -44,7 +49,7 @@ export default function Book({ bookData, onUpdate }) {
             </div>
             <div className="card-footer">
                 <div className="book-shelf-changer" style={{ backgroundColor: (bookData.shelf === 'read') ? '#28a745' : (bookData.shelf === 'wantToRead') ? '#dc3545' : (bookData.shelf === 'currentlyReading') ? '#007bff' : '#212529' }}>
-                    <select id='beso' onChange={(e) => { updateBook(e) }}>
+                    <select id='beso' value={booksShelfState} onChange={(e) => { updateBook(e) }}>
                         <option value="disabled" disabled>
                             Move to...
                         </option>
